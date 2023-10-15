@@ -13,22 +13,22 @@
     <section>
       <v-carousel>
         <v-carousel-item
-          img="food.jpg"
+          alt="food.jpg"
           src="~/assets/images/hero1.jpeg"
           cover
         ></v-carousel-item>
         <v-carousel-item
-          img="drinks.jpg"
+          alt="drinks.jpg"
           src="~/assets/images/hero2.jpeg"
           cover
         ></v-carousel-item>
         <v-carousel-item
-          img="drinks.jpg"
+          alt="drinks.jpg"
           src="~/assets/images/hero3.jpeg"
           cover
         ></v-carousel-item>
         <v-carousel-item
-          img="drinks.jpg"
+          alt="drinks.jpg"
           src="~/assets/images/hero4.jpeg"
           cover
         ></v-carousel-item>
