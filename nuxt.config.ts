@@ -1,6 +1,5 @@
 // import { fileURLToPath, URL } from 'node:url'
 // import presetIcons from '@unocss/preset-icons'
-import { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   // ssr: false,
