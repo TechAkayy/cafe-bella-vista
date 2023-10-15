@@ -16,8 +16,8 @@
   // }
 </script>
 <template>
-    <div class="flex-nowrap items-center space-x-2 w-full">
-        <DarkModeSwitch></DarkModeSwitch>
-    </div>
+  <div class="flex-nowrap items-center space-x-2 w-full">
+    <DarkModeSwitch></DarkModeSwitch>
+  </div>
 </template>
 <style scoped></style>

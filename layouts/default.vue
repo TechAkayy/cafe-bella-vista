@@ -6,21 +6,23 @@
   /* Update on using the above technique - We now use SSR HTTP Client hints technique instead of the above - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#ssr-http-client-hints */
 </script>
 <template>
-    <v-app>
-        <!-- <v-app :theme="isDark ? 'dark' : 'light'"> -->
-        <v-main>
-            <v-card class="mx-auto">
-                <div>
-                    <MetaTags/>
-                    <NavBar></NavBar>
-                    <div class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 min-h-screen">
-                        <!-- <NavBar /> -->
-                        <slot/>
-                        <!-- <TheFooter /> -->
-                    </div>
-                </div>
-            </v-card>
-        </v-main>
-    </v-app>
+  <v-app>
+    <!-- <v-app :theme="isDark ? 'dark' : 'light'"> -->
+    <v-main>
+      <v-card class="mx-auto">
+        <div>
+          <MetaTags />
+          <NavBar></NavBar>
+          <div
+            class="flex flex-col bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-50 min-h-screen"
+          >
+            <!-- <NavBar /> -->
+            <slot />
+            <!-- <TheFooter /> -->
+          </div>
+        </div>
+      </v-card>
+    </v-main>
+  </v-app>
 </template>
 <style></style>
