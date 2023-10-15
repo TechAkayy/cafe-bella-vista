@@ -14,23 +14,6 @@ export default defineNuxtConfig({
     },
   },
 
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls: {
-          'v-carousel': ['src', ':src'],
-          'v-carousel-item': ['src', ':src'],
-          'v-parallax': ['src'],
-        },
-      },
-    },
-    server: {
-      fs: {
-        strict: false,
-      },
-    },
-  },
-
   modules: [
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
@@ -88,6 +71,17 @@ export default defineNuxtConfig({
       'tailwindcss/nesting': {},
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls: {
+          'v-carousel': ['src', ':src'],
+          'v-carousel-item': ['src', ':src'],
+        },
+      },
     },
   },
 
