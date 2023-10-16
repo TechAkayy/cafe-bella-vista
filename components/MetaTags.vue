@@ -40,39 +40,39 @@
   const route = useRoute()
 
   useServerSeoMeta({
-    // charset: 'utf-8',
-    // author,
-    // viewport: 'width=device-width, initial-scale=1',
-    // keywords: route.meta.tags?.toString(),
-    // title,
+    charset: 'utf-8',
+    author,
+    viewport: 'width=device-width, initial-scale=1',
+    keywords: route.meta.tags?.toString(),
+    title,
     description,
-    // ogTitle: title,
-    // ogDescription: description,
-    // ogType: 'website',
-    // ogImage: image,
-    // ogImageAlt: title,
+    ogTitle: title,
+    ogDescription: description,
+    ogType: 'website',
+    ogImage: image,
+    ogImageAlt: title,
     // og:image:width
     // og:image:height
     // og:image:alt
     // og:image: type
     // og:image: secure_url
-    // ogUrl: url,
-    // ogSiteName: title,
+    ogUrl: url,
+    ogSiteName: title,
     // og: locale
     // og: type
-    // twitterTitle: title,
-    // twitterDescription: description,
-    // twitterImage: image,
-    // twitterImageAlt: title,
-    // twitterSite: '@vuedesigner',
-    // twitterCreator: '@techakayy',
-    // twitterCard: 'summary_large_image',
+    twitterTitle: title,
+    twitterDescription: description,
+    twitterImage: image,
+    twitterImageAlt: title,
+    twitterSite: '@vuedesigner',
+    twitterCreator: '@techakayy',
+    twitterCard: 'summary_large_image',
   })
 
   const name = useNuxtApp().$vuetify.theme.global.name
 
   useHead({
-    title: computed(() => route.meta.title),
+    title: computed(() => route.meta.title), // title was set using definePageMeta in pages. For dynamic routes, it's dynamically set in the [page] itself using useHead
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} - ${title}` : title
     },

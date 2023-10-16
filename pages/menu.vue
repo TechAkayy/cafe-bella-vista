@@ -2,7 +2,6 @@
   definePageMeta({
     // layout: 'default',
     // name: 'menu',
-    // path: 'menu',
     // alias: 'menu',
     title: 'Menu',
     navOrder: '2',

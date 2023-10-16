@@ -36,6 +36,7 @@
     "@nuxt/eslint-config": "^0.1.1",
     "@nuxt/image": "^1.0.0-rc.2",
     "@nuxtjs/html-validator": "^1.5.2",
+    "@nuxtseo/module": "^2.0.0-beta.15",
     "@pinegrow/nuxt-module": "^3.0.22",
     "@pinegrow/tailwindcss-plugin": "^3.0.17",
     "@pinegrow/vuetify-plugin": "^3.0.44",

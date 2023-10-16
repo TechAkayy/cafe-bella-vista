@@ -2,7 +2,6 @@
   definePageMeta({
     // layout: 'default',
     // name: 'our-story',
-    // path: 'our-story',
     // alias: 'our-story',
     title: 'Our Story',
     navOrder: '3',

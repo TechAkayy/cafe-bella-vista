@@ -1,9 +1,36 @@
 // import { fileURLToPath, URL } from 'node:url'
 // import presetIcons from '@unocss/preset-icons'
+import { installNuxtSiteConfig, updateSiteConfig } from 'nuxt-site-config-kit'
+
+import site from './site'
+const {
+  url,
+  title,
+  description,
+  defaultLocale,
+  identity,
+  twitter,
+  trailingSlash,
+  titleSeparator,
+} = site
 
 export default defineNuxtConfig({
   // ssr: false,
   devtools: { enabled: false }, // Disable when using Vue devtools
+
+  // Used by all modules in the @nuxtseo/module collection
+  // https://nuxtseo.com/nuxt-seo/guides/configuring-modules
+  site: {
+    url,
+    title,
+    description,
+    defaultLocale,
+    // https://nuxtseo.com/nuxt-seo/guides/setting-an-identity
+    identity,
+    twitter,
+    trailingSlash,
+    titleSeparator,
+  },
 
   // Look into MetaTags.vue for other flavours
   app: {
@@ -25,6 +52,22 @@ export default defineNuxtConfig({
     '@vee-validate/nuxt',
     'vuetify-nuxt-module',
     // '@nuxt/ui',
+    '@nuxtseo/module',
+
+    // async function (inlineOptions, nuxt) {
+    //   // nuxt.hook('site-config:resolve', (siteConfig) => {
+    //   //   console.log('hi')
+    //   //   console.log(siteConfig)
+    //   // })
+    //   await installNuxtSiteConfig()
+    //   // Optional: set some site config from your modules options
+    //   // This is not recommended, only to keep supporting your modules options
+    //   console.log()
+    //   updateSiteConfig({
+    //     _context: 'my-module',
+    //     url,
+    //   })
+    // },
   ],
 
   pinegrow: {

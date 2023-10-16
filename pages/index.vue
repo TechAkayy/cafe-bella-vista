@@ -1,16 +1,17 @@
 <script setup lang="ts">
   definePageMeta({
+    // layout: 'default',
+    // name: 'index',
+    // alias: 'index',
     title: 'Home',
     navOrder: 1,
-  })
-
-  useHead({
-    title: () => 'Home',
+    type: 'primary',
+    icon: 'i-mdi-home',
   })
 </script>
 <template>
   <main>
-    <section>
+    <section class="carousel">
       <v-carousel>
         <v-carousel-item
           alt="food.jpg"
