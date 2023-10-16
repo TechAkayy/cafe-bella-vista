@@ -1,7 +1,7 @@
 {
   "name": "pg-nuxt-vuetify-tailwindcss",
   "version": "0.0.0",
-  "homepage": "https://pg-nuxt-vuetify-tailwindcss.netlify.app",
+  "homepage": "https://lambent-florentine-6e51ca.netlify.app/",
   "repository": {
     "type": "git",
     "url": "https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss.git"
@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nuxt dev",
     "now": "npm run build && npm run preview",
-    "lighthouse": "npx unlighthouse --site https://pg-nuxt-vuetify-tailwindcss.netlify.app",
+    "lighthouse": "npx unlighthouse --site https://lambent-florentine-6e51ca.netlify.app/",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

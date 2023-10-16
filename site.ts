@@ -2,7 +2,7 @@ export default {
   title: 'Vue Designer',
   description: 'Vue Designer Nuxt Vuetify Tailwind CSS',
   author: 'Pinegrow',
-  url: 'https://pg-nuxt-vuetify-tailwindcss.netlify.app',
+  url: 'https://lambent-florentine-6e51ca.netlify.app/',
   defaultLocale: 'en', // default
   identity: {
     type: 'Organization',
