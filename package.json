@@ -1,10 +1,10 @@
 {
-  "name": "pg-nuxt-vuetify-tailwindcss",
+  "name": "the-ai-cafe",
   "version": "0.0.0",
   "homepage": "https://lambent-florentine-6e51ca.netlify.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pinegrow/pg-nuxt-vuetify-tailwindcss.git"
+    "url": "https://github.com/pinegrow/the-ai-cafe.git"
   },
   "scripts": {
     "dev": "nuxt dev",
@@ -51,7 +51,7 @@
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "npm-run-all": "^4.1.5",
-    "nuxt": "^3.6.5",
+    "nuxt": "^3.7.4",
     "postcss": "^8.4.22",
     "prettier": "^2.8.4",
     "rehype-external-links": "^2.1.0",
