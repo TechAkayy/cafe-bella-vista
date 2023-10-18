@@ -1,12 +1,11 @@
 // import { fileURLToPath, URL } from 'node:url'
 // import presetIcons from '@unocss/preset-icons'
-import { installNuxtSiteConfig, updateSiteConfig } from 'nuxt-site-config-kit'
 
 import site from './site'
 const {
+  name,
+  // description,
   url,
-  title,
-  description,
   defaultLocale,
   identity,
   twitter,
@@ -18,31 +17,18 @@ export default defineNuxtConfig({
   // ssr: false,
   devtools: { enabled: false }, // Disable when using Vue devtools
 
-  // Used by all modules in the @nuxtseo/module collection
-  // https://nuxtseo.com/nuxt-seo/guides/configuring-modules
-  site: {
-    url,
-    title,
-    description,
-    defaultLocale,
-    // https://nuxtseo.com/nuxt-seo/guides/setting-an-identity
-    identity,
-    twitter,
-    trailingSlash,
-    titleSeparator,
-  },
-
-  // Look into MetaTags.vue for other flavours
   app: {
-    baseURL: '/',
+    baseURL: '/', // defaulted by nuxt
+    // Look into HeadAndMeta.vue for the rest
     head: {
-      meta: [{ charset: 'utf-8' }],
+      meta: [{ charset: 'utf-8' }], // defaulted by nuxt
     },
   },
 
   modules: [
     '@pinegrow/nuxt-module',
     '@unocss/nuxt',
+    'nuxt-icon', //Used only in OgImage components
     '@nuxt/devtools',
     '@nuxt/content',
     '@vueuse/nuxt',
@@ -53,53 +39,7 @@ export default defineNuxtConfig({
     'vuetify-nuxt-module',
     // '@nuxt/ui',
     '@nuxtseo/module',
-
-    // async function (inlineOptions, nuxt) {
-    //   // nuxt.hook('site-config:resolve', (siteConfig) => {
-    //   //   console.log('hi')
-    //   //   console.log(siteConfig)
-    //   // })
-    //   await installNuxtSiteConfig()
-    //   // Optional: set some site config from your modules options
-    //   // This is not recommended, only to keep supporting your modules options
-    //   console.log()
-    //   updateSiteConfig({
-    //     _context: 'my-module',
-    //     url,
-    //   })
-    // },
   ],
-
-  pinegrow: {
-    liveDesigner: {
-      iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names
-      devtoolsKey: 'devtools', // see plugins/devtools.client.ts
-      tailwindcss: {
-        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-        configPath: 'tailwind.config.ts',
-        cssPath: '@/assets/css/tailwind.css',
-        // themePath: false, // Set to false so that Design Panel is not used
-        // restartOnConfigUpdate: true,
-        restartOnThemeUpdate: true,
-      },
-      vuetify: {
-        configPath: 'vuetify.config.ts',
-        utilities: false,
-        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
-        // restartOnConfigUpdate: true,
-        restartOnThemeUpdate: true,
-      },
-      // plugins: [
-      //   {
-      //     name: 'My Awesome Lib 3.0',
-      //     key: 'my-awesome-lib',
-      //     pluginPath: fileURLToPath(
-      //       new URL('./my-awesome-lib/web-types.json', import.meta.url),
-      //     ),
-      //   },
-      // ],
-    },
-  },
 
   // Vuetify's global styles
   css: [
@@ -120,6 +60,8 @@ export default defineNuxtConfig({
     vue: {
       template: {
         transformAssetUrls: {
+          OgImage: ['image', ':image'],
+          'v-img': ['src', 'lazySrc', 'srcset', ':src', ':lazySrc', ':srcset'],
           'v-carousel-item': [
             'src',
             'lazySrc',
@@ -253,5 +195,84 @@ export default defineNuxtConfig({
   sourcemap: {
     client: false,
     server: false,
+  },
+
+  // Used by all modules in the @nuxtseo/module collection
+  // https://nuxtseo.com/nuxt-seo/guides/configuring-modules
+  site: {
+    url,
+    name,
+    // description, // Description is dynamically set in HeadAndMeta.vue
+    defaultLocale,
+    // https://nuxtseo.com/nuxt-seo/guides/setting-an-identity
+    identity,
+    twitter,
+    trailingSlash,
+    titleSeparator,
+  },
+  robots: {
+    // https://nuxtseo.com/robots/api/config#blocknonseobots
+    blockNonSeoBots: true,
+  },
+  sitemap: {
+    // https://nuxtseo.com/sitemap/guides/i18n#debugging-hreflang
+    // Open https://lambent-florentine-6e51ca.netlify.app/sitemap.xml
+    xslColumns: [
+      { label: 'URL', width: '50%' },
+      { label: 'Last Modified', select: 'sitemap:lastmod', width: '12.5%' },
+      { label: 'Priority', select: 'sitemap:priority', width: '12.5%' },
+      {
+        label: 'Change Frequency',
+        select: 'sitemap:changefreq',
+        width: '12.5%',
+      },
+      { label: 'Hreflangs', select: 'count(xhtml:link)', width: '12.5%' },
+    ],
+    // To turn off xls file when viewing sitemap.xml
+    // xsl: false,
+    // Remove strictNuxtContentPaths if using nuxt-content in documentDriven mode
+    strictNuxtContentPaths: true,
+  },
+  ogImage: {
+    // Open https://lambent-florentine-6e51ca.netlify.app/__og_image__
+  },
+  linkChecker: {
+    enabled: false,
+    excludeLinks: ['https://twitter.com/vuedesigner'],
+    report: {
+      html: true,
+      markdown: true,
+    },
+  },
+
+  pinegrow: {
+    liveDesigner: {
+      iconPreferredCase: 'unocss', // default value (can be removed), nuxt/ui uses the unocss format for icon names
+      devtoolsKey: 'devtools', // see plugins/devtools.client.ts
+      tailwindcss: {
+        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
+        configPath: 'tailwind.config.ts',
+        cssPath: '@/assets/css/tailwind.css',
+        // themePath: false, // Set to false so that Design Panel is not used
+        // restartOnConfigUpdate: true,
+        restartOnThemeUpdate: true,
+      },
+      vuetify: {
+        configPath: 'vuetify.config.ts',
+        utilities: false,
+        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
+        // restartOnConfigUpdate: true,
+        restartOnThemeUpdate: true,
+      },
+      // plugins: [
+      //   {
+      //     name: 'My Awesome Lib 3.0',
+      //     key: 'my-awesome-lib',
+      //     pluginPath: fileURLToPath(
+      //       new URL('./my-awesome-lib/web-types.json', import.meta.url),
+      //     ),
+      //   },
+      // ],
+    },
   },
 })

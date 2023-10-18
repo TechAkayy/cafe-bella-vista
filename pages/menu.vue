@@ -4,6 +4,7 @@
     // name: 'menu',
     // alias: 'menu',
     title: 'Menu',
+    description: 'Savor the Flavor: Discover Our Delicious Cafe Menu!',
     navOrder: '2',
     type: 'primary',
     icon: 'i-mdi-home',
@@ -97,22 +98,16 @@
   ]
 </script>
 <template>
-  <main class="container mx-auto pt-16">
+  <div class="container mx-auto">
     <section class="menu-sample">
-      <v-card>
-        <v-card-title>Sample Menu</v-card-title>
-
-        <v-card-text>
-          <v-data-table
-            :items="menuItems"
-            :per-page="5"
-            :headers="headers"
-            class="elevation-1"
-          >
-          </v-data-table>
-        </v-card-text>
-      </v-card>
+      <v-data-table
+        :items="menuItems"
+        :per-page="5"
+        :headers="headers"
+        class="elevation-1"
+      >
+      </v-data-table>
     </section>
-  </main>
+  </div>
 </template>
 <style scoped></style>

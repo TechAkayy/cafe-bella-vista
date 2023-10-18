@@ -2,8 +2,8 @@
   const { isMobileMenuOpen } = useMobileMenu()
 </script>
 <template>
-  <nav class="container mx-auto px-4">
-    <div class="h-full navbar-grid py-4">
+  <div class="px-4">
+    <nav class="h-full navbar-grid py-4">
       <div style="grid-area: logo" class="flex justify-center">
         <TheLogo />
       </div>
@@ -25,7 +25,17 @@
         data-pg-name="Searchbox"
         style="grid-area: search"
         class="flex items-center"
-      ></div>
+      >
+        <v-form class="w-full">
+          <v-text-field
+            label="Search..."
+            append-inner-icon="i-material-symbols-search-rounded"
+            hide-details
+            variant="outlined"
+            class="w-full"
+          ></v-text-field>
+        </v-form>
+      </div>
       <div
         data-pg-name="Profile"
         class="flex justify-end space-x-2 md:items-center"
@@ -65,9 +75,10 @@
           </v-card>
         </v-menu>
       </div>
-    </div>
+    </nav>
     <v-navigation-drawer
       v-model="isMobileMenuOpen"
+      name="drawer"
       data-pg-name="PrimaryMobileNav"
       style="grid-area: primary-nav"
       class="w-80 md:hidden"
@@ -76,7 +87,7 @@
     >
       <PrimaryNav class="m-4" />
     </v-navigation-drawer>
-  </nav>
+  </div>
 </template>
 <style scoped>
   .navbar-grid {

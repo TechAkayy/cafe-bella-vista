@@ -4,33 +4,34 @@
     // name: 'index',
     // alias: 'index',
     title: 'Home',
+    description: 'Sip, Savor, and Spark Ideas at The AI Cafe!',
     navOrder: 1,
     type: 'primary',
     icon: 'i-mdi-home',
   })
 </script>
 <template>
-  <main>
-    <section class="carousel">
-      <v-carousel>
+  <div>
+    <section ref="carousel" class="h-[500px] relative">
+      <v-carousel class="absolute w-screen">
         <v-carousel-item
           alt="food.jpg"
-          src="~/assets/images/hero1.jpeg"
+          src="~/assets/images/hero1.jpg"
           cover
         ></v-carousel-item>
         <v-carousel-item
           alt="drinks.jpg"
-          src="~/assets/images/hero2.jpeg"
+          src="~/assets/images/hero2.jpg"
           cover
         ></v-carousel-item>
         <v-carousel-item
           alt="drinks.jpg"
-          src="~/assets/images/hero3.jpeg"
+          src="~/assets/images/hero3.jpg"
           cover
         ></v-carousel-item>
         <v-carousel-item
           alt="drinks.jpg"
-          src="~/assets/images/hero4.jpeg"
+          src="~/assets/images/hero4.jpg"
           cover
         ></v-carousel-item>
       </v-carousel>
@@ -83,7 +84,7 @@
         </v-row>
       </section>
       <section class="specials py-8">
-        <div class="container mx-auto">
+        <div>
           <h2 class="text-2xl font-bold text-center mb-4">Today's Specials</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div class="card">
@@ -125,7 +126,7 @@
         </div>
       </section>
       <section class="testimonials py-8">
-        <div class="container mx-auto">
+        <div>
           <h2 class="text-2xl font-bold text-center mb-4">Testimonials</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div class="card text-center">
@@ -177,7 +178,7 @@
         </div>
       </section>
       <section class="get-in-touch py-8">
-        <div class="container mx-auto">
+        <div>
           <h2 class="text-2xl font-bold text-center mb-4">Get In Touch</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div class="sm:col-span-1">
@@ -195,25 +196,7 @@
           </div>
         </div>
       </section>
-      <footer
-        class="py-4 px-8 flex flex-col sm:flex-row justify-between items-center"
-      >
-        <ul class="flex flex-wrap sm:flex-nowrap">
-          <li class="mr-4 mb-2 sm:mb-0">
-            <v-btn color="primary" plain variant="text">Facebook</v-btn>
-          </li>
-          <li class="mr-4 mb-2 sm:mb-0">
-            <v-btn color="primary" plain variant="text">Twitter</v-btn>
-          </li>
-          <li class="mb-2 sm:mb-0">
-            <v-btn color="primary" plain variant="text">Instagram</v-btn>
-          </li>
-        </ul>
-        <p class="mt-4 sm:mt-0">
-          &copy; 2021 Cafe Bella Vista. All rights reserved.
-        </p>
-      </footer>
     </div>
-  </main>
+  </div>
 </template>
 <style scoped></style>

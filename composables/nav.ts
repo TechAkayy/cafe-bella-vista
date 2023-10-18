@@ -30,7 +30,7 @@ export const useNav = () => {
 
   const navlinksFromConfig = site.nav
   // TODO: Use navlinksFromConfig if using dynamic routes
-  const navlinks = computed(() => navlinksFromRouter || navlinksFromConfig)
+  const navlinks = computed(() => navlinksFromConfig || navlinksFromRouter)
 
   const navlinksPrimary = computed(() => {
     return navlinks.value.filter(

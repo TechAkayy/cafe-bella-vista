@@ -17,10 +17,11 @@
 </script>
 <template>
   <NuxtLink data-pg-name="Logo" class="flex items-center sm:flex-row" to="/">
-    <v-icon class="text-4xl" icon="i-fluent-emoji-shopping-bags"></v-icon>
-    <h5 class="font-extrabold font-serif ml-2 mt-4 text-2xl">
-      Cafe Bella Vista
-    </h5>
+    <v-icon
+      class="text-4xl"
+      icon="i-vscode-icons-file-type-coffeelint"
+    ></v-icon>
+    <h5 class="font-extrabold font-serif ml-2 mt-4 text-2xl">The AI Cafe</h5>
   </NuxtLink>
 </template>
 <style scoped></style>
